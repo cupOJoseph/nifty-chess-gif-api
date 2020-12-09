@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Nifty Chess</title>
+
+    <meta charset="UTF-8" />
+    <meta name="author" content="Nifty Chess" />
+    <meta name="description" content="Nifty Chess" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <img
+          alt="Logo"
+          src="//s3.amazonaws.com/appforest_uf/f1580782353653x261239071988881950/noun_Sandwich_3059105.png"
+          height="70"
+        />
+        <ul>
+          <li><a href="#">Start new game</a></li>
+          <li><a href="#">Explore saved boards</a></li>
+        </ul>
+      </nav>
+      <h1>Nifty Chess</h1>
+      <p>
+        <mark>
+          Play chess, and save your favorite games as digital collectables. More unique possibilities than atoms in the universe.
+        </mark>
+      </p>
+      <br />
+      <p>
+        <button data-dh-feature="network" data-dh-property-enable="true">
+          Enable Web3
+        </button>
+      </p>
+    </header>
+    <div>
+      <section><h2>niftychess.com</h2></section>
+      <header>
+        <section>
+          <section><h2>Transaction Methods</h2></section>
+          <header>
+            <div
+              data-dh-feature="customContract"
+              data-dh-property-method-id="iQWl"
+              data-dh-property-auto-invoke="false"
+              data-dh-property-contract-name="niftychess.com"
+              data-dh-property-method-name="awardBoard"
+            >
+              <h3>Method <mark>"awardBoard"</mark></h3>
+              <section>
+                <aside>
+                  <section>
+                    Input name: <i>player</i>
+                    <input
+                      type="text"
+                      placeholder="address"
+                      data-dh-property-method-id="iQWl"
+                      data-dh-property-input-name="player"
+                    />
+                  </section>
+                  <section>
+                    Input name: <i>tokenURI</i>
+                    <input
+                      type="text"
+                      placeholder="string"
+                      data-dh-property-method-id="iQWl"
+                      data-dh-property-input-name="tokenURI"
+                    />
+                  </section>
+                  <section>
+                    Input name: <i>EthValue</i>
+                    <input
+                      type="text"
+                      placeholder="EthValue"
+                      data-dh-property-method-id="iQWl"
+                      data-dh-property-input-name="EthValue"
+                    />
+                  </section>
+                  <div
+                    data-dh-property-method-id="iQWl"
+                    data-dh-property-outputs="true"
+                  >
+                    <pre>Output...</pre>
+                  </div>
+
+                  <button
+                    data-dh-property-invoke="true"
+                    data-dh-property-method-id="iQWl"
+                  >
+                    awardBoard
+                  </button>
+                </aside>
+              </section>
+            </div>
+          </header>
+        </section>
+      </header>
+    </div>
+    <script
+      id="dh-apiKey"
+      data-api="1607479734984x708889577098575900"
+      src="https://package.dapphero.io/main.js"
+    ></script>
+    <style>
+      form {
+        margin: 40px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener(
+        "dappHeroConfigLoaded",
+        ({ detail: dappHero }) => {
+          // Inside here you can listen to any event you want
+          console.log("DappHero Has Loaded!");
+
+          // For projects with auto-invoked method, you will want to filter on events
+          // dappHero.listenToTransactionStatusChange(data => {
+          //   console.log("Listening to transtaction status change", data);
+          // });
+
+          // This is how you can listen to any events your smart contract emits
+          dappHero.listenToSmartContractBlockchainEvent((data) => {
+            console.log("The blockChain Events: ", data);
+          });
+
+          //This is an example method for alerting your users they are on the wrong network
+          //if(window.dappHero.provider.chainId !== 4){
+          //  alert("Wrong network! You should be on 4")
+          //}
+        }
+      );
+    </script>
+  </body>
+</html>
